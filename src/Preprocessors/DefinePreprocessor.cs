@@ -5,7 +5,7 @@ namespace RapNet.Preprocessors;
 /// <summary>
 /// Represents valid raP EntryTypes.RapValue names used for #define preprocessors.
 /// </summary>
-public class DefinePreprocessors 
+internal class DefinePreprocessors 
 {
     private static readonly List<RapDefinePreprocessor> Booleans =
         new List<RapDefinePreprocessor> {

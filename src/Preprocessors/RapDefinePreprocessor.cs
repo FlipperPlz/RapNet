@@ -1,11 +1,13 @@
+using System;
 using System.Text;
+using Antlr4.Runtime;
 using RapNet.EntryTypes;
 
 namespace RapNet.Preprocessors;
 /// <summary>
 /// Represents a config preprocessor define. (#define [name] [value])
 /// </summary>
-public sealed class RapDefinePreprocessor : IRapEntry
+internal sealed class RapDefinePreprocessor : IRapEntry
 {
     /// <summary>
     /// Preprocessor name.
@@ -33,4 +35,6 @@ public sealed class RapDefinePreprocessor : IRapEntry
     /// </summary>
     /// <returns>Returns object as final config format.</returns>
     public string ToConfigFormat() => new StringBuilder("#define ").Append(Name).Append(' ').Append(Value).ToString();
+
+    public IRapEntry FromParseContext(ParserRuleContext ctx) => throw new Exception("RapDefine::FromParseContext is not a valid method call.");
 }

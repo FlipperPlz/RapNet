@@ -1,3 +1,4 @@
+using Antlr4.Runtime;
 using RapNet.IO;
 
 namespace RapNet.EntryTypes;

@@ -1,3 +1,5 @@
+using Antlr4.Runtime;
+
 namespace RapNet.EntryTypes;
 
 /// <summary>
@@ -10,4 +12,7 @@ internal interface IRapEntry
     /// </summary>
     /// <returns>Returns object as human-readable config format.</returns>
     string ToConfigFormat();
+    
+    IRapEntry FromParseContext(ParserRuleContext ctx);
+
 }

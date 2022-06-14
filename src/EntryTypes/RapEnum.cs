@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using Antlr4.Runtime;
 using RapNet.IO;
 
 namespace RapNet.EntryTypes;
@@ -36,4 +37,7 @@ internal sealed class RapEnum : IBinarizedRapEntry
     /// </summary>
     /// <returns>Returns object as human-readable config format.</returns>
     public string ToConfigFormat() => new StringBuilder(Name ?? throw new NullReferenceException()).Append(" = ").Append(Value).ToString();
+
+    public IRapEntry FromParseContext(ParserRuleContext ctx) =>
+        throw new Exception("RapEnum::FromParseContext is not a valid method call as it is not implemented yet");
 }
